@@ -1,0 +1,6 @@
+import numpy as np
+import cv2
+import sys
+
+cap = cv2.VideoCapture('videos/Armbot.mp4')
+print(cap.read())

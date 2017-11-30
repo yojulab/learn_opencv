@@ -1,0 +1,14 @@
+MODULES_MANAGER_V2
+camera|/home/yojulab/Develop/eclipse-workspace_opencv/RaspberryPiWithIOT_py/camera.py
+cameracv|/home/yojulab/Develop/eclipse-workspace_opencv/RaspberryPiWithIOT_py/cameracv.py
+camerapi|/home/yojulab/Develop/eclipse-workspace_opencv/RaspberryPiWithIOT_py/camerapi.py
+camerarecord|/home/yojulab/Develop/eclipse-workspace_opencv/RaspberryPiWithIOT_py/camerarecord.py
+detectnemail_picv2|/home/yojulab/Develop/eclipse-workspace_opencv/RaspberryPiWithIOT_py/detectnemail_picv2.py
+facedetect|/home/yojulab/Develop/eclipse-workspace_opencv/RaspberryPiWithIOT_py/facedetect.py
+imgcontour|/home/yojulab/Develop/eclipse-workspace_opencv/RaspberryPiWithIOT_py/imgcontour.py
+imgsave|/home/yojulab/Develop/eclipse-workspace_opencv/RaspberryPiWithIOT_py/imgsave.py
+imgview|/home/yojulab/Develop/eclipse-workspace_opencv/RaspberryPiWithIOT_py/imgview.py
+mailsend|/home/yojulab/Develop/eclipse-workspace_opencv/RaspberryPiWithIOT_py/mailsend.py
+mjpgstream|/home/yojulab/Develop/eclipse-workspace_opencv/RaspberryPiWithIOT_py/mjpgstream.py
+mjpgstream2|/home/yojulab/Develop/eclipse-workspace_opencv/RaspberryPiWithIOT_py/mjpgstream2.py
+motion_picv2|/home/yojulab/Develop/eclipse-workspace_opencv/RaspberryPiWithIOT_py/motion_picv2.py

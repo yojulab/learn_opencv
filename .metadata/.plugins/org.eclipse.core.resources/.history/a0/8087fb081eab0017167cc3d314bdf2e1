@@ -1,0 +1,5 @@
+
+stream = pyffmpeg.VideoStream()
+stream.open('myvideo.avi')
+image = stream.GetFrameNo(0)
+image.save('firstframe.png')

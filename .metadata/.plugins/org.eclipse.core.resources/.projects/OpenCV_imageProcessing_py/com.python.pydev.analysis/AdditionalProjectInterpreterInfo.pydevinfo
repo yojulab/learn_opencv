@@ -1,0 +1,87 @@
+-- VERSION_4
+-- START DISKCACHE_2
+/home/yojulab/Develop/eclipse-workspace_opencv/.metadata/.plugins/org.eclipse.core.resources/.projects/OpenCV_imageProcessing_py/com.python.pydev.analysis/v2_indexcache
+ReadWriteimage|1508985927091058000|/home/yojulab/Develop/eclipse-workspace_opencv/OpenCV_imageProcessing_py/ReadWriteimage.py
+ShiftingRotatingImage|1507362459000000000|/home/yojulab/Develop/eclipse-workspace_opencv/OpenCV_imageProcessing_py/ShiftingRotatingImage.py
+ImageTransformations|1509183060542298000|/home/yojulab/Develop/eclipse-workspace_opencv/OpenCV_imageProcessing_py/ImageTransformations.py
+test|1507362459725136000|/home/yojulab/Develop/eclipse-workspace_opencv/OpenCV_imageProcessing_py/test.py
+BitwiseOperations|1509165333535384000|/home/yojulab/Develop/eclipse-workspace_opencv/OpenCV_imageProcessing_py/BitwiseOperations.py
+Otsu’sBinarizationThresholding|1507367395776202000|/home/yojulab/Develop/eclipse-workspace_opencv/OpenCV_imageProcessing_py/Otsu’sBinarizationThresholding.py
+SplittingMerging_Channels|1509154152326457000|/home/yojulab/Develop/eclipse-workspace_opencv/OpenCV_imageProcessing_py/SplittingMerging_Channels.py
+AdaptiveThresholding|1509172919258203000|/home/yojulab/Develop/eclipse-workspace_opencv/OpenCV_imageProcessing_py/AdaptiveThresholding.py
+Otsu’sBinarizationThresholding_more|1507367531445585000|/home/yojulab/Develop/eclipse-workspace_opencv/OpenCV_imageProcessing_py/Otsu’sBinarizationThresholding_more.py
+findHSVToTrack|1509167657146980000|/home/yojulab/Develop/eclipse-workspace_opencv/OpenCV_imageProcessing_py/findHSVToTrack.py
+MakingBordersPaddingforImages|1507289653266397000|/home/yojulab/Develop/eclipse-workspace_opencv/OpenCV_imageProcessing_py/MakingBordersPaddingforImages.py
+ImageAdditionBlending|1507294856853833000|/home/yojulab/Develop/eclipse-workspace_opencv/OpenCV_imageProcessing_py/ImageAdditionBlending.py
+DrawingFunctions|1507279819495329000|/home/yojulab/Develop/eclipse-workspace_opencv/OpenCV_imageProcessing_py/DrawingFunctions.py
+TrackbarColorPalette|1507281423308290000|/home/yojulab/Develop/eclipse-workspace_opencv/OpenCV_imageProcessing_py/TrackbarColorPalette.py
+SimpleCamera|1509068165601605000|/home/yojulab/Develop/eclipse-workspace_opencv/OpenCV_imageProcessing_py/SimpleCamera.py
+AccessingModifying_Pixels|1507286477011925000|/home/yojulab/Develop/eclipse-workspace_opencv/OpenCV_imageProcessing_py/AccessingModifying_Pixels.py
+AffinePerspectiveTransformations|1509173290887125000|/home/yojulab/Develop/eclipse-workspace_opencv/OpenCV_imageProcessing_py/AffinePerspectiveTransformations.py
+SimpleThresholding|1509172108446208000|/home/yojulab/Develop/eclipse-workspace_opencv/OpenCV_imageProcessing_py/SimpleThresholding.py
+-- END DISKCACHE
+-- START DICTIONARY
+18
+16=ReadWriteimage
+12=ShiftingRotatingImage
+2=ImageTransformations
+11=test
+10=BitwiseOperations
+7=Otsu’sBinarizationThresholding
+17=SplittingMerging_Channels
+15=AdaptiveThresholding
+3=Otsu’sBinarizationThresholding_more
+8=findHSVToTrack
+6=MakingBordersPaddingforImages
+5=ImageAdditionBlending
+4=TrackbarColorPalette
+9=SimpleCamera
+13=DrawingFunctions
+18=AccessingModifying_Pixels
+1=AffinePerspectiveTransformations
+14=SimpleThresholding
+-- END DICTIONARY
+-- START TREE 1
+38
+M|2|M!11@M!19@
+M2|1|M2!19@
+Q|1|Q!27@
+b|1|b!35@
+bin|1|bins!27@
+ble|1|blending_img!43@
+blu|4|BLUE!51@blur!59@blue!67@blur!27@
+cap|1|cap!75@
+con|1|constant!51@
+dst|4|dst!11@dst!19@dst2!19@dst!83@
+fla|3|flags!91@flags!99@flags!67@
+fn|1|fn!27@
+fn_|1|fn_min!27@
+fon|1|font!107@
+g|1|g!35@
+gra|0|
+gre|1|green!67@
+his|2|hist_norm!27@hist!27@
+hsv|3|hsv_green!67@hsv_blue!67@hsv_red!67@
+ima|3|images!115@images!59@images!123@
+img|21|img2gray!83@img!131@img!27@img2!83@img_black!139@img!147@img!43@img!35@img!123@img_tmp!139@img2!43@img1!51@img!83@img!19@img!107@img!59@img!11@img1_bg!83@img!139@img!115@img2_fg!83@
+k|5|k!43@k!35@k!107@k!131@k!139@
+mas|1|mask_inv!83@
+mer|1|merge_img!139@
+mix|1|mix!43@
+not|2|nothing!34@nothing!42@
+pts|3|pts1!11@pts2!11@pts!107@
+r|1|r!35@
+red|1|red!67@
+ref|2|reflect101!51@reflect!51@
+rep|1|replicate!51@
+res|1|res!19@
+roi|2|roi!83@roi!139@
+th2|1|th2!123@
+th3|1|th3!123@
+thr|1|thresh!27@
+tit|3|titles!59@titles!123@titles!115@
+wra|1|wrap!51@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

@@ -1,0 +1,74 @@
+-- VERSION_4
+-- START DISKCACHE_2
+/home/yojulab/Develop/eclipse-workspace_opencv/.metadata/.plugins/org.eclipse.core.resources/.projects/RaspberryPiWithIOT_py/com.python.pydev.analysis/v2_indexcache
+mjpgstream|1509009397238947000|/home/yojulab/Develop/eclipse-workspace_opencv/RaspberryPiWithIOT_py/mjpgstream.py
+imgcontour|1508831414493181000|/home/yojulab/Develop/eclipse-workspace_opencv/RaspberryPiWithIOT_py/imgcontour.py
+facedetect|1508831414493181000|/home/yojulab/Develop/eclipse-workspace_opencv/RaspberryPiWithIOT_py/facedetect.py
+camerapi|1508831414493181000|/home/yojulab/Develop/eclipse-workspace_opencv/RaspberryPiWithIOT_py/camerapi.py
+cameracv|1508831414493181000|/home/yojulab/Develop/eclipse-workspace_opencv/RaspberryPiWithIOT_py/cameracv.py
+mailsend|1508831414497181000|/home/yojulab/Develop/eclipse-workspace_opencv/RaspberryPiWithIOT_py/mailsend.py
+imgsave|1508831414493181000|/home/yojulab/Develop/eclipse-workspace_opencv/RaspberryPiWithIOT_py/imgsave.py
+motion_picv2|1509006459100811000|/home/yojulab/Develop/eclipse-workspace_opencv/RaspberryPiWithIOT_py/motion_picv2.py
+imgview|1508831414497181000|/home/yojulab/Develop/eclipse-workspace_opencv/RaspberryPiWithIOT_py/imgview.py
+mjpgstream2|1508831414497181000|/home/yojulab/Develop/eclipse-workspace_opencv/RaspberryPiWithIOT_py/mjpgstream2.py
+camera|1508987837346086000|/home/yojulab/Develop/eclipse-workspace_opencv/RaspberryPiWithIOT_py/camera.py
+detectnemail_picv2|1509007271454035000|/home/yojulab/Develop/eclipse-workspace_opencv/RaspberryPiWithIOT_py/detectnemail_picv2.py
+camerarecord|1508831414493181000|/home/yojulab/Develop/eclipse-workspace_opencv/RaspberryPiWithIOT_py/camerarecord.py
+-- END DISKCACHE
+-- START DICTIONARY
+12
+4=motion_picv2
+1=mjpgstream
+12=MyHandler.do_GET
+9=imgcontour
+2=facedetect
+3=mjpgstream2
+8=imgview
+11=MyHandler
+6=camera
+5=detectnemail_picv2
+7=cameracv
+10=mailsend
+-- END DICTIONARY
+-- START TREE 1
+34
+app|1|app!11@
+cam|6|cam!19@cam!27@cam!35@cam!11@cam!43@cam!51@
+cas|2|cascade!19@cascade_fn!19@
+che|1|checkFlag!43@
+clo|1|clock!18@
+cou|2|count!43@count!35@
+dat|1|data!59@
+det|1|detect!18@
+dif|3|diffImage!34@diff!43@diff!35@
+do_|2|do_stream!10@do_route!10@
+dra|2|draw_str!18@draw_rects!18@
+dt|1|dt!19@
+fla|1|flag!43@
+get|2|getCam!11@getGrayCameraImage!34@
+gra|1|gray!19@
+i|2|i!43@i!35@
+im|2|im!67@im!75@
+ima|1|image!59@
+key|4|key!51@key!35@key!43@key!59@
+mai|1|main!26@
+myh|1|MyHandler!25@
+nz|1|nz!35@
+pas|2|passwd!43@passwd!83@
+por|4|portssl!43@portssl!83@port!83@port!43@
+qua|1|quality!27@
+rec|2|rects!19@recvid!83@
+sen|2|send_mail!82@sendmail!42@
+smt|2|smtp_server!83@smtp_server!43@
+str|1|stream!59@
+t|1|t!19@
+thr|3|ThreadedHTTPServer!25@thresh!43@thresh!35@
+upd|1|updateCameraImage!34@
+use|2|userid!83@userid!43@
+vis|1|vis!19@
+-- END TREE
+-- START TREE 2
+2
+do_|2|do_GET!11&26@do_POST!11&26@
+pat|1|path!12&27@
+-- END TREE

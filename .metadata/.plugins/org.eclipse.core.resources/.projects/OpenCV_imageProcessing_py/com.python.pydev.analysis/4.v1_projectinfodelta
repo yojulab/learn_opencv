@@ -1,0 +1,9 @@
+INSTUPAffinePerspectiveTransformations
+/home/yojulab/Develop/eclipse-workspace_opencv/OpenCV_imageProcessing_py/AffinePerspectiveTransformations.py
+INFOS:&&3|1|2|0&&3|3|2|0&&3|4|2|0&&3|5|2|0&&3|6|2|0
+img=1
+dst=6
+pts1=3
+pts2=4
+M=5
+AffinePerspectiveTransformations=2

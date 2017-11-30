@@ -1,0 +1,6 @@
+import numpy as np
+import cv2
+import sys
+
+cap = cv2.VideoCapture(0)
+print (cap.get(cv2.cv.CV_CAP_PROP_FOURCC))
