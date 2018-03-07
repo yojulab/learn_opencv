@@ -14,7 +14,7 @@ def get_frame(cap, scaling_factor):
 
 if __name__=='__main__':
     # Define the video capture object
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(1)
 
     # Define the background subtractor object
     bg_subtractor = cv2.createBackgroundSubtractorMOG2()

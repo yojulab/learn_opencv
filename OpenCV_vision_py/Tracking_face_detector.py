@@ -10,7 +10,7 @@ if face_cascade.empty():
 	raise IOError('Unable to load the face cascade classifier xml file')
 
 # Initialize the video capture object
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(1)
 
 # Define the scaling factor
 scaling_factor = 0.5

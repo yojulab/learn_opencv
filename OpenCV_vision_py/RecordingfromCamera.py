@@ -1,9 +1,11 @@
 import numpy as np
 import cv2
 
-cap = cv2.VideoCapture(0)
-fourcc = cv2.VideoWriter_fourcc(*'XVID')
-out = cv2.VideoWriter('videos/output.avi',fourcc, 20.0, (640,480))
+cap = cv2.VideoCapture(1)
+#fourcc = cv2.VideoWriter_fourcc(*'XVID')
+#out = cv2.VideoWriter('videos/output.avi',fourcc, 20.0, (640,480))
+fourcc = cv2.VideoWriter_fourcc(*'MP4V')
+out = cv2.VideoWriter('videos/output.mp4',fourcc, 20.0, (640,480))
 
 while(True):
     ret, frame = cap.read()
