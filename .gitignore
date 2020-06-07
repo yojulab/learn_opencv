@@ -1,4 +1,6 @@
 .DS_Store
-.vscode/settings.json
-*/__pycache__/*.pyc
+.vscode/**
+**/*.pyc
 .pytest_cache/*
+./metadata/**
+**/.*
