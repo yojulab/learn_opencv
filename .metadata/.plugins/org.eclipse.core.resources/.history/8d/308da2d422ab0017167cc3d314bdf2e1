@@ -1,2 +1,0 @@
-cap = cv2.VideoCapture('VID00003-20100701-2204.avi')
-print(cap.read())
