@@ -1,10 +1,10 @@
 import cv2
 import numpy as np
 
-img = cv2.imread('images/noisy.jpg',0)
-# img = cv2.imread('images/radial_gradient.png',0)
-# img = cv2.imread('images/opencv_logo.png',0)
-# img = cv2.imread('images/load_image.jpg', cv2.IMREAD_GRAYSCALE)
+img = cv2.imread('image_processing/images/noisy.jpg',0)
+# img = cv2.imread('image_processing/images/radial_gradient.png',0)
+# img = cv2.imread('image_processing/images/opencv_logo.png',0)
+# img = cv2.imread('image_processing/images/load_image.jpg', cv2.IMREAD_GRAYSCALE)
 
 blur = cv2.GaussianBlur(img,(5,5),0)
 

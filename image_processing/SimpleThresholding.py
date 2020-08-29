@@ -1,9 +1,9 @@
 import cv2
 from matplotlib import pyplot as plt
 
-img = cv2.imread('images/radial_gradient.png',0)
-# img = cv2.imread('images/opencv_logo.png',0)
-# img = cv2.imread('images/load_image.jpg', cv2.IMREAD_GRAYSCALE)
+img = cv2.imread('image_processing/images/radial_gradient.png',0)
+# img = cv2.imread('image_processing/images/opencv_logo.png',0)
+# img = cv2.imread('image_processing/images/load_image.jpg', cv2.IMREAD_GRAYSCALE)
 ret,thresh1 = cv2.threshold(img,127,255,cv2.THRESH_BINARY)
 ret,thresh2 = cv2.threshold(img,127,255,cv2.THRESH_BINARY_INV)
 ret,thresh3 = cv2.threshold(img,127,255,cv2.THRESH_TRUNC)
