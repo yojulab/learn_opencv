@@ -1,0 +1,10 @@
+import mimetypes
+print(mimetypes.guess_type('./sample01.xlsx'))
+# ('application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', None)
+print(mimetypes.guess_type('./sample02.jpg'))
+# ('image/jpeg', None)
+print(mimetypes.guess_type('./Armbot.mp4'))
+# ('video/mp4', None)
+print(mimetypes.guess_type('./output.avi'))
+# ('video/x-msvideo', None)
+print(mimetypes.guess_type('./haarcascade_eye.xml'))
