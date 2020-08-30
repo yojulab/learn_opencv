@@ -13,7 +13,7 @@ end_y=400
 width = end_x - start_x
 height = end_y - start_y
 
-view_img = cv2.imread('../OpenCV_imageProcessing_py/images/load_image.jpg',1)
+view_img = cv2.imread('image_processing/images/load_image.jpg',1)
 cv2.imshow('image',view_img)
 
 # Define the codec and create VideoWriter object
