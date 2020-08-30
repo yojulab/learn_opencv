@@ -1,7 +1,6 @@
 import cv2
 
 # videoFile = 'videos/Armbot.mp4'
-videoFile = 'videos/output.avi'
 videoFile = 'OpenCV_py/videos/output.avi'
 cap = cv2.VideoCapture(videoFile)
 while not cap.isOpened():

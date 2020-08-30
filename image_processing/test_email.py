@@ -7,7 +7,7 @@ smtp_server = "smtp.naver.com"
 port = 587
 portssl = 465
 userid = "otter35@naver.com"
-passwd = "!osh3587*"
+passwd = "************"
 
 def sendmail(image):
     to=[userid]

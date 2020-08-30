@@ -8,8 +8,8 @@ from email.mime.multipart import MIMEMultipart
 smtp_server = "smtp.gmail.com"
 port = 587
 portssl = 465
-userid = "otter.oh@gmail.com"
-passwd = "!osh3587*"
+userid = "mahau.master@gmail.com"
+passwd = "************"
 
 def sendmail(image):
     to=[userid]
