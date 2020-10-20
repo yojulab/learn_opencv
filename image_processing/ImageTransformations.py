@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-img = cv2.imread('image_processing/images/window_image.jpg')
+img = cv2.imread('image_processing/datas/images/window_image.jpg')
 cv2.imshow('Original Image',img)
 
 res = cv2.resize(img,dsize=None,fx=2, fy=2, interpolation = cv2.INTER_CUBIC)

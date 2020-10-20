@@ -7,7 +7,7 @@ def record_audio():
     CHANNELS = 2
     RATE = 44100
     RECORD_SECONDS = 5
-    WAVE_OUTPUT_FILENAME = "sounds/output.wav"
+    WAVE_OUTPUT_FILENAME = "datas/sounds/output.wav"
 
     p = pyaudio.PyAudio()
 

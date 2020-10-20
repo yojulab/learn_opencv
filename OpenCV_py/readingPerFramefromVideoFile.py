@@ -1,7 +1,7 @@
 import cv2
 
-videoFile = 'OpenCV_py/videos/Armbot.mp4'
-# videoFile = 'OpenCV_py/videos/output.avi'
+videoFile = 'OpenCV_py/datas/videos/Armbot.mp4'
+# videoFile = 'OpenCV_py/datas/videos/output.avi'
 cap = cv2.VideoCapture(videoFile)
 
 break_key = True

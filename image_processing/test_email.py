@@ -32,5 +32,5 @@ def sendmail(image):
     server.quit()
 
 if __name__ == "__main__":
-    sendmail('image_processing/images/load_image.jpg')
+    sendmail('image_processing/datas/images/load_image.jpg')
     

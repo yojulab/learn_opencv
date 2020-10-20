@@ -9,7 +9,7 @@ if len(sys.argv) < 2:
     sys.exit(-1)
 
 wf = wave.open(sys.argv[1], 'rb')
-# wf = wave.open('sounds/output.wav', 'rb')
+# wf = wave.open('datas/sounds/output.wav', 'rb')
 
 p = pyaudio.PyAudio()
 

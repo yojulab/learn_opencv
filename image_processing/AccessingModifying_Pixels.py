@@ -1,6 +1,6 @@
 import cv2
 
-img = cv2.imread('image_processing/images/load_image.jpg')
+img = cv2.imread('image_processing/datas/images/load_image.jpg')
 
 print ('pixel img[100,100] values',img[100,100])
 print('accessing only blue pixel',img[100,100,0])

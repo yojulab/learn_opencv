@@ -13,11 +13,11 @@ end_y=400
 width = end_x - start_x
 height = end_y - start_y
 
-view_img = cv2.imread('image_processing/images/load_image.jpg',1)
+view_img = cv2.imread('image_processing/datas/images/load_image.jpg',1)
 cv2.imshow('image',view_img)
 
 # Define the codec and create VideoWriter object
-output = "videos/screencapwithpyautogui.mp4"
+output = "datas/videos/screencapwithpyautogui.mp4"
 fourcc = cv2.VideoWriter_fourcc(*'MP4V')
 out = cv2.VideoWriter(output, fourcc, 20.0, (width, height))
 

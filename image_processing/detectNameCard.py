@@ -14,7 +14,7 @@ def reorderPts(pts):
 
 root_path = os.getcwd()
 
-img = cv2.imread(root_path+'/image_processing/images/namecard.png')
+img = cv2.imread(root_path+'/image_processing/datas/images/namecard.png')
 
 if img is None: 
     print("Error opening video stream or file")

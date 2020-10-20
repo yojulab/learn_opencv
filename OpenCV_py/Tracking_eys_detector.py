@@ -2,8 +2,8 @@ import cv2
 import numpy as np
 
 # Load the Haar cascade files for face and eye
-face_cascade = cv2.CascadeClassifier('haar_cascade_files/haarcascade_frontalface_default.xml')
-eye_cascade = cv2.CascadeClassifier('haar_cascade_files/haarcascade_eye.xml')
+face_cascade = cv2.CascadeClassifier('datas/haar_cascade_files/haarcascade_frontalface_default.xml')
+eye_cascade = cv2.CascadeClassifier('datas/haar_cascade_files/haarcascade_eye.xml')
 
 # Check if the face cascade file has been loaded correctly
 if face_cascade.empty():

@@ -1,6 +1,6 @@
 import cv2
 
-img = cv2.imread('image_processing/images/load_image.jpg')
+img = cv2.imread('image_processing/datas/images/load_image.jpg')
 img_tmp = img
 
 b,g,r = cv2.split(img)  #is a costly operation

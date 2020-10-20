@@ -3,7 +3,7 @@ import numpy as np
 
 # Load the Haar cascade file
 face_cascade = cv2.CascadeClassifier(
-        'haar_cascade_files/haarcascade_frontalface_default.xml')
+        'datas/haar_cascade_files/haarcascade_frontalface_default.xml')
 
 # Check if the cascade file has been loaded correctly
 if face_cascade.empty():

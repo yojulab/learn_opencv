@@ -1,7 +1,7 @@
 import cv2
 
-img = cv2.imread('image_processing/images/load_image.jpg')
-img2 = cv2.imread('image_processing/images/opencv_logo.png')
+img = cv2.imread('image_processing/datas/images/load_image.jpg')
+img2 = cv2.imread('image_processing/datas/images/opencv_logo.png')
 
 # cv2.imshow('source image',img)
 # cv2.imshow('logo',img2)
