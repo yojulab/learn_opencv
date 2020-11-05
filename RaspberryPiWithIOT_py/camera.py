@@ -1,21 +1,21 @@
-import cv2
+from cv2 import cv2 as cv
 #import numpy
 
-cam = cv2.VideoCapture(0)
-cam.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
-cam.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
-cam.set(cv2.CAP_PROP_FPS, 7)
+cam = cv.VideoCapture(0)
+cam.set(cv.CAP_PROP_FRAME_WIDTH, 640)
+cam.set(cv.CAP_PROP_FRAME_HEIGHT, 480)
+cam.set(cv.CAP_PROP_FPS, 7)
 #cv2mat = numpy.array([])
 
 while True:
     ret,img = cam.read()
-    #ret1=cv2.imencode(".jpeg",im,cv2mat)
+    #ret1=cv.imencode(".jpeg",im,cv2mat)
     #JpegData=cv2mat.tostring()
     #print JpegData
-    cv2.imshow('video test',img)
-    key = cv2.waitKey(10)
+    cv.imshow('video test',img)
+    key = cv.waitKey(10)
     if key == 27:
         break
     if key == ord('s'):
-        cv2.imwrite('capture.jpg',img)
+        cv.imwrite('capture.jpg',img)
 

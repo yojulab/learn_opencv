@@ -1,4 +1,4 @@
-import cv2
+from cv2 import cv2 as cv
 import numpy as np
 import Tracking_Framedifferencing
 import smtplib
@@ -13,7 +13,7 @@ passwd = "************"
 
 def sendmail(image):
     to=[userid]
-    imageByte=cv2.imencode(".jpeg", image)[1].tostring()
+    imageByte=cv.imencode(".jpeg", image)[1].tostring()
     msg = MIMEMultipart()
     imageMime=MIMEImage(imageByte)
     msg.attach(imageMime)
@@ -35,9 +35,9 @@ def sendmail(image):
 
 if __name__ == "__main__":
     thresh = 16
-    cam = cv2.VideoCapture(0)
-    cam.set(cv2.CAP_PROP_FRAME_WIDTH, 320)
-    cam.set(cv2.CAP_PROP_FRAME_HEIGHT, 240)
+    cam = cv.VideoCapture(0)
+    cam.set(cv.CAP_PROP_FRAME_WIDTH, 320)
+    cam.set(cv.CAP_PROP_FRAME_HEIGHT, 240)
     if cam.isOpened() == False:
         print("Cam isn't opened")
         exit()
@@ -48,8 +48,8 @@ if __name__ == "__main__":
     checkFlag = 0
     while True:
         diff = Tracking_Framedifferencing.diffImage(i)
-        ret,thrimg=cv2.threshold(diff, thresh, 1, cv2.THRESH_BINARY)
-        count = cv2.countNonZero(thrimg)
+        ret,thrimg=cv.threshold(diff, thresh, 1, cv.THRESH_BINARY)
+        count = cv.countNonZero(thrimg)
         # if invader is checked
         if (count > 1):
             checkFlag += 1
@@ -64,6 +64,6 @@ if __name__ == "__main__":
         # process next image
         Tracking_Framedifferencing.updateCameraImage(cam, i)
 
-        key = cv2.waitKey(10)
+        key = cv.waitKey(10)
         if key == 27:
             break

@@ -1,4 +1,4 @@
-import cv2
+from cv2 import cv2 as cv
 import numpy as np
 
 # Define a function to get the current frame from the webcam
@@ -7,17 +7,17 @@ def get_frame(cap, scaling_factor):
     _, frame = cap.read()
 
     # Resize the image
-    frame = cv2.resize(frame, None, fx=scaling_factor, 
-            fy=scaling_factor, interpolation=cv2.INTER_AREA)
+    frame = cv.resize(frame, None, fx=scaling_factor, 
+            fy=scaling_factor, interpolation=cv.INTER_AREA)
 
     return frame
 
 if __name__=='__main__':
     # Define the video capture object
-    cap = cv2.VideoCapture(1)
+    cap = cv.VideoCapture(1)
 
     # Define the background subtractor object
-    bg_subtractor = cv2.createBackgroundSubtractorMOG2()
+    bg_subtractor = cv.createBackgroundSubtractorMOG2()
      
     # Define the number of previous frames to use to learn. 
     # This factor controls the learning rate of the algorithm. 
@@ -40,14 +40,14 @@ if __name__=='__main__':
         mask = bg_subtractor.apply(frame, learningRate=learning_rate)
 
         # Convert grayscale image to RGB color image
-        mask = cv2.cvtColor(mask, cv2.COLOR_GRAY2BGR)
+        mask = cv.cvtColor(mask, cv.COLOR_GRAY2BGR)
 
         # Display the images
-        cv2.imshow('Input', frame)
-        cv2.imshow('Output', mask & frame)
+        cv.imshow('Input', frame)
+        cv.imshow('Output', mask & frame)
 
         # Check if the user hit the 'Esc' key
-        c = cv2.waitKey(10)
+        c = cv.waitKey(10)
         if c == 27:
             break
 
@@ -55,4 +55,4 @@ if __name__=='__main__':
     cap.release()
     
     # Close all the windows
-    cv2.destroyAllWindows()
+    cv.destroyAllWindows()

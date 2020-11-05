@@ -2,13 +2,13 @@ import string, cgi, time
 from os import curdir, sep
 from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
 from SocketServer import ThreadingMixIn
-import cv2, cv
+from cv2 import cv2 as cv, cv
 import numpy
 import re
 
 # setup video capture
 quality = 75
-cam = cv2.VideoCapture(0)
+cam = cv.VideoCapture(0)
 cam.set(cv.CV_CAP_PROP_FRAME_WIDTH, 320)
 cam.set(cv.CV_CAP_PROP_FRAME_HEIGHT, 240)
 #capture = cv.CaptureFromCAM(-1)
@@ -39,8 +39,8 @@ class MyHandler(BaseHTTPRequestHandler):
                     #img = cv.QueryFrame(capture)
                     ret,img = cam.read()
                     #cv2mat=cv.EncodeImage(".jpeg",img,(cv.CV_IMWRITE_JPEG_QUALITY,quality))
-                    #ret1,cv2mat=cv2.imencode(".jpeg",img)
-                    ret1=cv2.imencode(".jpeg",img,cv2mat)
+                    #ret1,cv2mat=cv.imencode(".jpeg",img)
+                    ret1=cv.imencode(".jpeg",img,cv2mat)
                     JpegData=cv2mat.tostring()
                     self.wfile.write("--aaboundary\r\n")
                     self.wfile.write("Content-Type: image/jpeg\r\n")

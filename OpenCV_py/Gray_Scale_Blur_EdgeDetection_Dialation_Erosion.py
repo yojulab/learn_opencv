@@ -1,24 +1,24 @@
-import cv2
+from cv2 import cv2 as cv
 
-img = cv2.imread("datas/images/lena.png")
+img = cv.imread("datas/images/lena.png")
 
-imgGray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
-cv2.imshow("Gray Image",imgGray)
+imgGray = cv.cvtColor(img,cv.COLOR_BGR2GRAY)
+cv.imshow("Gray Image",imgGray)
 
-imgBlur = cv2.GaussianBlur(imgGray,(7,7),0)
-cv2.imshow("Blur Image",imgBlur)
+imgBlur = cv.GaussianBlur(imgGray,(7,7),0)
+cv.imshow("Blur Image",imgBlur)
 
-imgCanny = cv2.Canny(img,150,200)
-cv2.imshow("Canny Image",imgCanny)
+imgCanny = cv.Canny(img,150,200)
+cv.imshow("Canny Image",imgCanny)
 
 import numpy as np
 kernel = np.ones((5,5),np.uint8)
 
-imgDialation = cv2.dilate(imgCanny,kernel,iterations=1)
-cv2.imshow("Dialation Image",imgDialation)
+imgDialation = cv.dilate(imgCanny,kernel,iterations=1)
+cv.imshow("Dialation Image",imgDialation)
 
-imgEroded = cv2.erode(imgDialation,kernel,iterations=1)
-cv2.imshow("Eroded Image",imgEroded)
+imgEroded = cv.erode(imgDialation,kernel,iterations=1)
+cv.imshow("Eroded Image",imgEroded)
 
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+cv.waitKey(0)
+cv.destroyAllWindows()

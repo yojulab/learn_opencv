@@ -1,4 +1,4 @@
-import cv2
+from cv2 import cv2 as cv
 import sys
 import os
 import numpy as np
@@ -14,38 +14,38 @@ def reorderPts(pts):
 
 root_path = os.getcwd()
 
-img = cv2.imread(root_path+'/image_processing/datas/images/namecard.png')
+img = cv.imread(root_path+'/image_processing/datas/images/namecard.png')
 
 if img is None: 
     print("Error opening video stream or file")
     sys.exit()
 
-img = cv2.resize(img, (0,0), fx=0.3, fy=0.3)    
-img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+img = cv.resize(img, (0,0), fx=0.3, fy=0.3)    
+img_gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 
-_, img_binary = cv2.threshold(img_gray, 0, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)
-contours, _ = cv2.findContours(img_binary, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
+_, img_binary = cv.threshold(img_gray, 0, 255, cv.THRESH_BINARY | cv.THRESH_OTSU)
+contours, _ = cv.findContours(img_binary, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_NONE)
 
 dw, dh = 900, 500
 import pytesseract
 for pts in contours:
-    if cv2.contourArea(pts) > 5000:
-        approx = cv2.approxPolyDP(pts, cv2.arcLength(pts, True)*0.02, True)
-        if len(approx) == 4 and cv2.isContourConvex(approx):
-            cv2.polylines(img, pts, True, (0,0,255))
+    if cv.contourArea(pts) > 5000:
+        approx = cv.approxPolyDP(pts, cv.arcLength(pts, True)*0.02, True)
+        if len(approx) == 4 and cv.isContourConvex(approx):
+            cv.polylines(img, pts, True, (0,0,255))
             srcQuad = reorderPts(approx.reshape(4,2))
             dstQuad = np.array([[0,dh], [dw,dh], [dw,0], [0,0]], dtype=np.float32)
 
-            pers = cv2.getPerspectiveTransform(srcQuad, dstQuad)
-            img_dst = cv2.warpPerspective(img, pers, (dw, dh), flags=cv2.INTER_CUBIC)
+            pers = cv.getPerspectiveTransform(srcQuad, dstQuad)
+            img_dst = cv.warpPerspective(img, pers, (dw, dh), flags=cv.INTER_CUBIC)
 
-            dst_rgb = cv2.cvtColor(img_dst, cv2.COLOR_BGR2RGB)
+            dst_rgb = cv.cvtColor(img_dst, cv.COLOR_BGR2RGB)
             print(pytesseract.image_to_string(dst_rgb, lang='Hangul+Hangul_vert+eng+eng_vert'))
 
-cv2.imshow('Resource', img)
-cv2.imshow('Grayscale', img_gray)
-cv2.imshow('Convert Binary', img_binary)
-cv2.imshow('dst', img_dst)
-if cv2.waitKey(0) == 27:
-    cv2.destroyAllWindows()
+cv.imshow('Resource', img)
+cv.imshow('Grayscale', img_gray)
+cv.imshow('Convert Binary', img_binary)
+cv.imshow('dst', img_dst)
+if cv.waitKey(0) == 27:
+    cv.destroyAllWindows()
 

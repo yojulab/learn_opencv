@@ -1,4 +1,4 @@
-import cv2
+from cv2 import cv2 as cv
 import smtplib
 from email.mime.image import MIMEImage
 from email.mime.multipart import MIMEMultipart
@@ -11,7 +11,7 @@ passwd = "************"
 
 def sendmail(image):
     to=[userid]
-    imageByte=cv2.imencode(".jpeg", image)[1].tostring()
+    imageByte=cv.imencode(".jpeg", image)[1].tostring()
     msg = MIMEMultipart()
     imageMime=MIMEImage(imageByte)
     msg.attach(imageMime)

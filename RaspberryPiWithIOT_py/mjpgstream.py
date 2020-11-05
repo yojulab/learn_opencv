@@ -1,12 +1,12 @@
-import cv2
+from cv2 import cv2 as cv
 from flask import Flask, Response, url_for
 
 getCam = False
 # setup video capture
 if getCam == False:
-    cam = cv2.VideoCapture(0)
-    cam.set(cv2.CAP_PROP_FRAME_WIDTH, 320)
-    cam.set(cv2.CAP_PROP_FRAME_HEIGHT, 240)
+    cam = cv.VideoCapture(0)
+    cam.set(cv.CAP_PROP_FRAME_WIDTH, 320)
+    cam.set(cv.CAP_PROP_FRAME_HEIGHT, 240)
     getCam = True
 
 app = Flask(__name__)
@@ -16,7 +16,7 @@ def do_stream():
     Response.set_header('Content-Type', 'multipart/x-mixed-replace; boundary=--MjpgBound')
     while True:
         ret,img = cam.read()
-        jpegdata=cv2.imencode(".jpeg",img)[1].tostring()
+        jpegdata=cv.imencode(".jpeg",img)[1].tostring()
         string = "--MjpgBound\r\n"
         string += "Content-Type: image/jpeg\r\n"
         string += "Content-length: "+str(len(jpegdata))+"\r\n\r\n"

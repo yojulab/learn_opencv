@@ -1,17 +1,17 @@
-import cv2
+from cv2 import cv2 as cv
 from matplotlib import pyplot as plt
 
-img = cv2.imread('image_processing/datas/images/sudoku.jpg',cv2.IMREAD_GRAYSCALE)
-# img = cv2.imread('image_processing/datas/images/radial_gradient.png',0)
-# img = cv2.imread('image_processing/datas/images/opencv_logo.png',0)
-# img = cv2.imread('image_processing/datas/images/load_image.jpg', cv2.IMREAD_GRAYSCALE)
-img = cv2.medianBlur(img,5)
+img = cv.imread('image_processing/datas/images/sudoku.jpg',cv.IMREAD_GRAYSCALE)
+# img = cv.imread('image_processing/datas/images/radial_gradient.png',0)
+# img = cv.imread('image_processing/datas/images/opencv_logo.png',0)
+# img = cv.imread('image_processing/datas/images/load_image.jpg', cv.IMREAD_GRAYSCALE)
+img = cv.medianBlur(img,5)
 
-ret,th1 = cv2.threshold(img,127,255,cv2.THRESH_BINARY)
-th2 = cv2.adaptiveThreshold(img,255,cv2.ADAPTIVE_THRESH_MEAN_C,\
-            cv2.THRESH_BINARY,11,2)
-th3 = cv2.adaptiveThreshold(img,255,cv2.ADAPTIVE_THRESH_GAUSSIAN_C,\
-            cv2.THRESH_BINARY,11,1)
+ret,th1 = cv.threshold(img,127,255,cv.THRESH_BINARY)
+th2 = cv.adaptiveThreshold(img,255,cv.ADAPTIVE_THRESH_MEAN_C,\
+            cv.THRESH_BINARY,11,2)
+th3 = cv.adaptiveThreshold(img,255,cv.ADAPTIVE_THRESH_GAUSSIAN_C,\
+            cv.THRESH_BINARY,11,1)
 
 titles = ['Original Image', 'Global Thresholding (v = 127)',
             'Adaptive Mean Thresholding', 'Adaptive Gaussian Thresholding']

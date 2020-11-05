@@ -1,20 +1,20 @@
 import numpy as np
-import cv2
+from cv2 import cv2 as cv
 
-cap = cv2.VideoCapture(1)
-#fourcc = cv2.VideoWriter_fourcc(*'XVID')
-#out = cv2.VideoWriter('datas/videos/output.avi',fourcc, 20.0, (640,480))
-fourcc = cv2.VideoWriter_fourcc(*'MP4V')
-out = cv2.VideoWriter('datas/videos/output.mp4',fourcc, 20.0, (640,480))
+cap = cv.VideoCapture(1)
+#fourcc = cv.VideoWriter_fourcc(*'XVID')
+#out = cv.VideoWriter('datas/videos/output.avi',fourcc, 20.0, (640,480))
+fourcc = cv.VideoWriter_fourcc(*'MP4V')
+out = cv.VideoWriter('datas/videos/output.mp4',fourcc, 20.0, (640,480))
 
 while(True):
     ret, frame = cap.read()
-    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
     out.write(frame)
-    cv2.imshow('frame',gray)
-    if cv2.waitKey(1) & 0xFF == ord('q'):
+    cv.imshow('frame',gray)
+    if cv.waitKey(1) & 0xFF == ord('q'):
         break
 
 cap.release()
 out.release()
-cv2.destroyAllWindows()
+cv.destroyAllWindows()

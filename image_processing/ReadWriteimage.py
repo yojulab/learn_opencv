@@ -1,11 +1,11 @@
-import cv2
+from cv2 import cv2 as cv
 
 # read gray color from images
-img = cv2.imread('image_processing/datas/images/load_image.jpg',1)
-cv2.imshow('image',img)
-k = cv2.waitKey(0) & 0xFF   # 64bit
+img = cv.imread('image_processing/datas/images/load_image.jpg',1)
+cv.imshow('image',img)
+k = cv.waitKey(0) & 0xFF   # 64bit
 if k == 27:         # wait for ESC key to exit
-    cv2.destroyAllWindows()
+    cv.destroyAllWindows()
 elif k == ord('s'): # wait for 's' key to save and exit
-    cv2.imwrite('image_processing/datas/images/load_gray.png',img)
-    cv2.destroyAllWindows()
+    cv.imwrite('image_processing/datas/images/load_gray.png',img)
+    cv.destroyAllWindows()

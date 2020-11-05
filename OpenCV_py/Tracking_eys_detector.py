@@ -1,9 +1,9 @@
-import cv2
+from cv2 import cv2 as cv
 import numpy as np
 
 # Load the Haar cascade files for face and eye
-face_cascade = cv2.CascadeClassifier('datas/haar_cascade_files/haarcascade_frontalface_default.xml')
-eye_cascade = cv2.CascadeClassifier('datas/haar_cascade_files/haarcascade_eye.xml')
+face_cascade = cv.CascadeClassifier('datas/haar_cascade_files/haarcascade_frontalface_default.xml')
+eye_cascade = cv.CascadeClassifier('datas/haar_cascade_files/haarcascade_eye.xml')
 
 # Check if the face cascade file has been loaded correctly
 if face_cascade.empty():
@@ -14,7 +14,7 @@ if eye_cascade.empty():
 	raise IOError('Unable to load the eye cascade classifier xml file')
 
 # Initialize the video capture object
-cap = cv2.VideoCapture(1)
+cap = cv.VideoCapture(1)
 
 # Define the scaling factor
 ds_factor = 0.5
@@ -25,10 +25,10 @@ while True:
     _, frame = cap.read()
 
     # Resize the frame
-    frame = cv2.resize(frame, None, fx=ds_factor, fy=ds_factor, interpolation=cv2.INTER_AREA)
+    frame = cv.resize(frame, None, fx=ds_factor, fy=ds_factor, interpolation=cv.INTER_AREA)
 
     # Convert to grayscale
-    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
 
     # Run the face detector on the grayscale image
     faces = face_cascade.detectMultiScale(gray, 1.3, 5)
@@ -50,13 +50,13 @@ while True:
             radius = int(0.3 * (w_eye + h_eye))
             color = (0, 255, 0)
             thickness = 3
-            cv2.circle(roi_color, center, radius, color, thickness)
+            cv.circle(roi_color, center, radius, color, thickness)
 
     # Display the output
-    cv2.imshow('Eye Detector', frame)
+    cv.imshow('Eye Detector', frame)
 
     # Check if the user hit the 'Esc' key
-    c = cv2.waitKey(1)
+    c = cv.waitKey(1)
     if c == 27:
         break
 
@@ -64,4 +64,4 @@ while True:
 cap.release()
 
 # Close all the windows
-cv2.destroyAllWindows()
+cv.destroyAllWindows()

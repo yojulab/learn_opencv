@@ -1,5 +1,5 @@
 import picamera, time
-import cv2
+from cv2 import cv2 as cv
 import numpy as np
 import sys, io
 
@@ -16,16 +16,16 @@ with picamera.PiCamera() as camera:
     data = np.fromstring(stream.getvalue(), dtype=np.uint8)
 
     # Decode the numpy array image
-    image = cv2.imdecode(data, cv2.CV_LOAD_IMAGE_COLOR)
+    image = cv.imdecode(data, cv.CV_LOAD_IMAGE_COLOR)
 
     # Empty and return the in-memory stream to beginning
     stream.seek(0)
     stream.truncate(0)
 
     # Display the image
-    cv2.imshow('image', image)
+    cv.imshow('image', image)
 
     # Wait for ESC to end program
-    key = cv2.waitKey(10)
+    key = cv.waitKey(10)
     if key == 27:
         break

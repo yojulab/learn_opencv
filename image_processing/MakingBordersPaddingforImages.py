@@ -1,15 +1,15 @@
-import cv2
+from cv2 import cv2 as cv
 from matplotlib import pyplot as plt
 
 BLUE = [255,0,0]
 
-img1 = cv2.imread('image_processing/datas/images/load_image.jpg')
+img1 = cv.imread('image_processing/datas/images/load_image.jpg')
 
-replicate = cv2.copyMakeBorder(img1,10,10,10,10,cv2.BORDER_REPLICATE)
-reflect = cv2.copyMakeBorder(img1,10,10,10,10,cv2.BORDER_REFLECT)
-reflect101 = cv2.copyMakeBorder(img1,10,10,10,10,cv2.BORDER_REFLECT_101)
-wrap = cv2.copyMakeBorder(img1,10,10,10,10,cv2.BORDER_WRAP)
-constant= cv2.copyMakeBorder(img1,10,10,10,10,cv2.BORDER_CONSTANT,value=BLUE)
+replicate = cv.copyMakeBorder(img1,10,10,10,10,cv.BORDER_REPLICATE)
+reflect = cv.copyMakeBorder(img1,10,10,10,10,cv.BORDER_REFLECT)
+reflect101 = cv.copyMakeBorder(img1,10,10,10,10,cv.BORDER_REFLECT_101)
+wrap = cv.copyMakeBorder(img1,10,10,10,10,cv.BORDER_WRAP)
+constant= cv.copyMakeBorder(img1,10,10,10,10,cv.BORDER_CONSTANT,value=BLUE)
 
 plt.subplot(231),plt.imshow(img1,'gray'),plt.title('ORIGINAL')
 plt.subplot(232),plt.imshow(replicate,'gray'),plt.title('REPLICATE')

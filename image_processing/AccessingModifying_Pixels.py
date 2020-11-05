@@ -1,6 +1,6 @@
-import cv2
+from cv2 import cv2 as cv
 
-img = cv2.imread('image_processing/datas/images/load_image.jpg')
+img = cv.imread('image_processing/datas/images/load_image.jpg')
 
 print ('pixel img[100,100] values',img[100,100])
 print('accessing only blue pixel',img[100,100,0])
@@ -15,6 +15,6 @@ print('Image Properties - shape',img.shape)
 print('Image Properties - size', img.size)
 print('Image Properties - dtype',img.dtype)
 
-# cv2.imshow('image',img)
-# k = cv2.waitKey(0) & 0xFF
-cv2.destroyAllWindows()
+# cv.imshow('image',img)
+# k = cv.waitKey(0) & 0xFF
+cv.destroyAllWindows()

@@ -1,20 +1,20 @@
-import cv2
+from cv2 import cv2 as cv
 from matplotlib import pyplot as plt
 
-img = cv2.imread('image_processing/datas/images/noisy.jpg',0)
-# img = cv2.imread('image_processing/datas/images/radial_gradient.png',0)
-# img = cv2.imread('image_processing/datas/images/opencv_logo.png',0)
-# img = cv2.imread('image_processing/datas/images/load_image.jpg', cv2.IMREAD_GRAYSCALE)
+img = cv.imread('image_processing/datas/images/noisy.jpg',0)
+# img = cv.imread('image_processing/datas/images/radial_gradient.png',0)
+# img = cv.imread('image_processing/datas/images/opencv_logo.png',0)
+# img = cv.imread('image_processing/datas/images/load_image.jpg', cv.IMREAD_GRAYSCALE)
 
 # global thresholding
-ret1,th1 = cv2.threshold(img,127,255,cv2.THRESH_BINARY)
+ret1,th1 = cv.threshold(img,127,255,cv.THRESH_BINARY)
 
 # Otsu's thresholding
-ret2,th2 = cv2.threshold(img,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
+ret2,th2 = cv.threshold(img,0,255,cv.THRESH_BINARY+cv.THRESH_OTSU)
 
 # Otsu's thresholding after Gaussian filtering
-blur = cv2.GaussianBlur(img,(5,5),0)
-ret3,th3 = cv2.threshold(blur,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
+blur = cv.GaussianBlur(img,(5,5),0)
+ret3,th3 = cv.threshold(blur,0,255,cv.THRESH_BINARY+cv.THRESH_OTSU)
 
 # plot all the images and their histograms
 images = [img, 0, th1,
