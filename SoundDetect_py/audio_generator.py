@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from scipy.io.wavfile import write
 
 # Output file where the audio will be saved 
-output_file = 'generated_audio.wav'
+output_file = 'datas/sounds/generated_audio.wav'
 
 # Specify audio parameters
 duration = 4  # in seconds

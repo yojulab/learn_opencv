@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from scipy.io import wavfile
 
 # Read the audio file
-sampling_freq, signal = wavfile.read('spoken_word.wav')
+sampling_freq, signal = wavfile.read('datas/sounds/spoken_word.wav')
 
 # Normalize the values
 signal = signal / np.power(2, 15) 

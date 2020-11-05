@@ -4,7 +4,7 @@ from scipy.io import wavfile
 from features import mfcc, logfbank
 
 # Read the input audio file
-sampling_freq, signal = wavfile.read('random_sound.wav')
+sampling_freq, signal = wavfile.read('datas/sounds/random_sound.wav')
 
 # Take the first 10,000 samples for analysis
 signal = signal[:10000]

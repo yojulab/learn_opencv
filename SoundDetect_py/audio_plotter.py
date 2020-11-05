@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from scipy.io import wavfile
 
 # Read the audio file
-sampling_freq, signal = wavfile.read('random_sound.wav')
+sampling_freq, signal = wavfile.read('datas/sounds/random_sound.wav')
 
 # Display the params
 print('\nSignal shape:', signal.shape)

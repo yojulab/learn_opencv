@@ -16,11 +16,11 @@ def tone_synthesizer(freq, duration, amplitude=1.0, sampling_freq=44100):
 
 if __name__=='__main__':
     # Names of output files
-    file_tone_single = 'generated_tone_single.wav'
-    file_tone_sequence = 'generated_tone_sequence.wav'
+    file_tone_single = 'datas/sounds/generated_tone_single.wav'
+    file_tone_sequence = 'datas/sounds/generated_tone_sequence.wav'
 
     # Source: http://www.phy.mtu.edu/~suits/notefreqs.html
-    mapping_file = 'tone_mapping.json'
+    mapping_file = 'datas/sounds/tone_mapping.json'
     
     # Load the tone to frequency map from the mapping file
     with open(mapping_file, 'r') as f:
