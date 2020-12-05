@@ -1,10 +1,10 @@
 from cv2 import cv2 as cv
 from matplotlib import pyplot as plt
 
-img = cv.imread('image_processing/datas/images/noisy.jpg',0)
-# img = cv.imread('image_processing/datas/images/radial_gradient.png',0)
-# img = cv.imread('image_processing/datas/images/opencv_logo.png',0)
-# img = cv.imread('image_processing/datas/images/load_image.jpg', cv.IMREAD_GRAYSCALE)
+img = cv.imread('datas/images/noisy.jpg',0)
+# img = cv.imread('datas/images/radial_gradient.png',0)
+# img = cv.imread('datas/images/opencv_logo.png',0)
+# img = cv.imread('datas/images/load_image.jpg', cv.IMREAD_GRAYSCALE)
 
 # global thresholding
 ret1,th1 = cv.threshold(img,127,255,cv.THRESH_BINARY)

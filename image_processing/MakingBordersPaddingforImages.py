@@ -3,7 +3,7 @@ from matplotlib import pyplot as plt
 
 BLUE = [255,0,0]
 
-img1 = cv.imread('image_processing/datas/images/load_image.jpg')
+img1 = cv.imread('datas/images/load_image.jpg')
 
 replicate = cv.copyMakeBorder(img1,10,10,10,10,cv.BORDER_REPLICATE)
 reflect = cv.copyMakeBorder(img1,10,10,10,10,cv.BORDER_REFLECT)

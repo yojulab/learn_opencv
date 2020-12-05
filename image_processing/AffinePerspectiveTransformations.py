@@ -2,7 +2,7 @@ from cv2 import cv2 as cv
 import numpy as np
 from matplotlib import pyplot as plt
 
-img = cv.imread('image_processing/datas/images/sudoku.jpg')
+img = cv.imread('datas/images/sudoku.jpg')
 rows,cols,ch = img.shape
 
 pts1 = np.float32([[50,50],[200,50],[50,200]])

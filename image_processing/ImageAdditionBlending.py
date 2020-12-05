@@ -1,7 +1,7 @@
 from cv2 import cv2 as cv
 
-img = cv.imread('image_processing/datas/images/load_image.jpg')
-img2 = cv.imread('image_processing/datas/images/window_image.jpg')
+img = cv.imread('datas/images/load_image.jpg')
+img2 = cv.imread('datas/images/window_image.jpg')
 cv.imshow('load image',img)
 cv.imshow('window image',img2)
 
