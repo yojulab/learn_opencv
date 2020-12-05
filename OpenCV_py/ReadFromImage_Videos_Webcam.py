@@ -14,6 +14,8 @@ cap = cv.VideoCapture("datas/videos/Armbot.mp4")
 while True:
     success, img = cap.read()
     img = cv.resize(img, (frameWidth, frameHeight))
+    # frameWidth = frameWidth + 20
+    # frameHeight = frameHeight + 20
     cv.imshow("Result", img)
     if cv.waitKey(1) == ord('q'):
         break
@@ -25,8 +27,8 @@ frameWidth = 640
 frameHeight = 480
 cap = cv.VideoCapture(1)
 
-cap.set(3, frameWidth)
-cap.set(4, frameHeight)
+cap.set(cv.CAP_PROP_FRAME_WIDTH, frameWidth)
+cap.set(cv.CAP_PROP_FRAME_HEIGHT, frameHeight)
 cap.set(cv.CAP_PROP_BRIGHTNESS,150)
 while cap.isOpened():
     success, img = cap.read()
