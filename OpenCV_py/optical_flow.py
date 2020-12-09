@@ -4,7 +4,7 @@ import numpy as np
 # Define a function to track the object
 def start_tracking():
     # Initialize the video capture object
-    cap = cv.VideoCapture(1)
+    cap = cv.VideoCapture(0)
 
     # Define the scaling factor for the frames
     scaling_factor = 0.5

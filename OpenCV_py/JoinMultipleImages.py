@@ -43,14 +43,15 @@ def stackImages(scale, imgArray):
 
 img = cv.imread('datas/images/lena.png')
 imgGray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
+grayToBGR = cv.cvtColor(imgGray,cv.COLOR_GRAY2BGR)  # without Error dimension
 
-imgHor = np.hstack((img,img))
+imgHor = np.hstack((grayToBGR,img))
 cv.imshow("Horizontal",imgHor)
 
-imgVer = np.vstack((img,img))
+imgVer = np.vstack((grayToBGR,img))
 cv.imshow("Vertical",imgVer)
 
-imgStack = stackImages(0.5, ([img, imgGray, img], [img, img, img]))
+imgStack = stackImages(0.5, ([img, imgGray, img], [imgGray, img, imgGray]))
 cv.imshow("ImageStack", imgStack)
 
 cv.waitKey(0)
