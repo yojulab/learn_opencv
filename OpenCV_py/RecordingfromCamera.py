@@ -1,7 +1,7 @@
 import numpy as np
 from cv2 import cv2 as cv
 
-cap = cv.VideoCapture(1)
+cap = cv.VideoCapture(0)
 fourcc = cv.VideoWriter_fourcc(*'XVID')
 out_avi = cv.VideoWriter('datas/videos/output.avi',fourcc, 20.0, (640,480))
 fourcc = cv.VideoWriter_fourcc(*'MP4V')
@@ -12,7 +12,8 @@ while(True):
     gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
     out_avi.write(frame)
     out_mp4.write(frame)
-    cv.imshow('frame',gray)
+    cv.imshow('frame',frame)
+    # cv.imshow('frame',gray)
     if cv.waitKey(1) & 0xFF == ord('q'):
         break
 

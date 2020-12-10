@@ -17,10 +17,10 @@ if hasdir():
 filename = directoryname+"/image_0.png"
 img = cv.imread(filename)
 height, width, layers = img.shape
-size = (height, width)
-filename_output = directoryname + '/output_video.avi'
+size = (width, height)
+filename_output = directoryname + '/output_video.mp3'
 fps = 0.5
-out_avi = cv.VideoWriter(filename_output, cv.VideoWriter_fourcc(*'DIVX'), fps, size)
+out_avi = cv.VideoWriter(filename_output, cv.VideoWriter_fourcc(*'MP4V'), fps, size)
 
 # reading each files
 for count in range(len(files)):
