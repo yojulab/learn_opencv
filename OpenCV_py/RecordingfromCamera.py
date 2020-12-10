@@ -2,10 +2,16 @@ import numpy as np
 from cv2 import cv2 as cv
 
 cap = cv.VideoCapture(0)
+(width, height) = (640,480)
+fps = 20.0
+cap.set(cv.CAP_PROP_FRAME_WIDTH, width)
+cap.set(cv.CAP_PROP_FRAME_HEIGHT, height)
+cap.set(cv.CAP_PROP_FPS, fps)
+
 fourcc = cv.VideoWriter_fourcc(*'XVID')
-out_avi = cv.VideoWriter('datas/videos/output.avi',fourcc, 20.0, (640,480))
+out_avi = cv.VideoWriter('datas/videos/output.avi',fourcc, fps, (width, height))
 fourcc = cv.VideoWriter_fourcc(*'MP4V')
-out_mp4 = cv.VideoWriter('datas/videos/output.mp4',fourcc, 20.0, (640,480))
+out_mp4 = cv.VideoWriter('datas/videos/output.mp4',fourcc, fps, (width, height))
 
 while(True):
     ret, frame = cap.read()
