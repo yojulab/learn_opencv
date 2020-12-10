@@ -1,4 +1,5 @@
 from cv2 import cv2 as cv
+import numpy as np
 
 # Compute the frame differences
 def frame_diff(prev_frame, cur_frame, next_frame):
@@ -8,7 +9,13 @@ def frame_diff(prev_frame, cur_frame, next_frame):
     # Difference between the current frame and the previous frame
     diff_frames_2 = cv.absdiff(cur_frame, prev_frame)
 
-    return cv.bitwise_and(diff_frames_1, diff_frames_2)
+    return_diff = cv.bitwise_and(diff_frames_1, diff_frames_2)
+
+    threshold = len(return_diff[np.where(return_diff > 2)])
+    if threshold > 200:
+        print('threshold > 200 : ', threshold)
+
+    return return_diff
 
 # Define a function to get the current frame from the webcam
 def get_frame(cap, scaling_factor):
