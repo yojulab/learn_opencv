@@ -55,6 +55,7 @@ if __name__=='__main__':
         cv.imshow('Object Movement', frame_diff(prev_frame, 
                 cur_frame, next_frame))
 
+        cv.imshow('Current Frame', cur_frame) 
         # Update the variables
         prev_frame = cur_frame
         cur_frame = next_frame 

@@ -45,7 +45,7 @@ words = pytesseract.image_to_data(img_thresh, config=custom_config, output_type=
 print(words.keys())
 n_boxes = len(words['text'])
 for i in range(n_boxes):
-    if int(words['conf'][i]) > 60:
+    if int(words['conf'][i]) > 10:
         (x, y, w, h) = (words['left'][i], words['top'][i], words['width'][i], words['height'][i])
         img_thresh = cv.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
 

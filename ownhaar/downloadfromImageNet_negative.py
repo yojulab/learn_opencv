@@ -3,7 +3,7 @@ import numpy as np
 import os, requests, wget
 
 def store_raw_images():
-    neg_images_link = 'http://image-net.org/api/text/imagenet.synset.geturls?wnid=n00523513'
+    neg_images_link = 'http://image-net.org/api/text/imagenet.synset.geturls?wnid=n02917067'
     res = requests.get(neg_images_link)
     if res.status_code != 200:
         exit(1)
