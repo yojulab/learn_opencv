@@ -21,6 +21,9 @@ while(cap.isOpened()):
     # cv.imshow("Original Scene", frame)
 
     # snip section of video frame of interest & show on screen
+    if frame is None:
+        cv.waitKey(0)
+        break
     snip = frame[500:700, 300:900]
     cv.imshow("Snip", snip)
 

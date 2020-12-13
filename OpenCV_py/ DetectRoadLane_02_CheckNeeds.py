@@ -73,6 +73,9 @@ def display_lines(image, lines):
 cap = cv.VideoCapture("datas/videos/roadway_01.mp4")
 while(cap.isOpened()):
     _, frame = cap.read()
+    if frame is None:
+        cv.waitKey(0)
+        break
     canny_image = canny_edge_detector(frame)
     cropped_image = region_of_interest(canny_image)
 
