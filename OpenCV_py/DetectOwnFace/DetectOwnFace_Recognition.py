@@ -3,13 +3,13 @@ import numpy as np
 from os import listdir
 from os.path import isfile, join
 
-data_path = 'faces/'
-onlyfiles = [f for f in listdir(data_path) if isfile(join(data_path,f))]
+directory_name = 'datas/images/faces/'
+onlyfiles = [f for f in listdir(directory_name) if isfile(join(directory_name,f))]
 
 Training_Data, Labels = [], []
 
 for i, files in enumerate(onlyfiles):
-    image_path = data_path + onlyfiles[i]
+    image_path = directory_name + onlyfiles[i]
     images = cv.imread(image_path, cv.IMREAD_GRAYSCALE)
     Training_Data.append(np.asarray(images, dtype=np.uint8))
     Labels.append(i)
@@ -18,11 +18,13 @@ Labels = np.asarray(Labels, dtype=np.int32)
 
 model = cv.face.LBPHFaceRecognizer_create()
 
+print("Model Training Start!!!!!")
+
 model.train(np.asarray(Training_Data), np.asarray(Labels))
 
 print("Model Training Complete!!!!!")
 
-face_classifier = cv.CascadeClassifier('haarcascade_frontalface_default.xml')
+face_classifier = cv.CascadeClassifier('datas/haar_cascade_files/haarcascade_frontalface_default.xml')
 
 def face_detector(img, size = 0.5):
     gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
@@ -51,7 +53,8 @@ while True:
 
         if result[1] < 500:
             confidence = int(100*(1-(result[1])/300))
-            display_string = str(confidence)+'% Confidence it is user'
+            display_string = str(confidence)+'% Confidence , Predict '
+        display_string = display_string + str(result[1])
         cv.putText(image,display_string,(100,120), cv.FONT_HERSHEY_COMPLEX,1,(250,120,255),2)
 
 
@@ -69,7 +72,7 @@ while True:
         cv.imshow('Face Cropper', image)
         pass
 
-    if cv.waitKey(1)==13:
+    if cv.waitKey(1)==ord('q'):
         break
 
 

@@ -1,7 +1,7 @@
 from cv2 import cv2 as cv
 import numpy as np
 
-face_classifier = cv.CascadeClassifier('haarcascade_frontalface_default.xml')
+face_classifier = cv.CascadeClassifier("datas/haar_cascade_files/haarcascade_frontalface_default.xml")
 
 
 def face_extractor(img):
@@ -21,24 +21,32 @@ def face_extractor(img):
 cap = cv.VideoCapture(0)
 count = 0
 
-while True:
+import os
+directory_name = 'datas/images/faces/'
+
+if not os.path.exists(directory_name):
+    os.mkdir(directory_name)
+
+while cap.isOpened():
     ret, frame = cap.read()
-    if face_extractor(frame) is not None:
+    cropped_area = face_extractor(frame)
+    put_text = ''
+    if cropped_area is not None:
         count+=1
-        face = cv.resize(face_extractor(frame),(200,200))
-        face = cv.cvtColor(face, cv.COLOR_BGR2GRAY)
+        area = cv.resize(cropped_area,(200,200))
+        area = cv.cvtColor(area, cv.COLOR_BGR2GRAY)
 
-        file_name_path = 'faces/user'+str(count)+'.jpg'
-        cv.imwrite(file_name_path,face)
+        file_name = directory_name + 'user'+str(count)+'.jpg'
+        cv.imwrite(file_name,area)
 
-        cv.putText(face,str(count),(50,50),cv.FONT_HERSHEY_COMPLEX,1,(0,255,0),2)
-        cv.imshow('Face Cropper',face)
-        print("Face Found!")
+        put_text = "Face Found!, imwrite() count" + str(count)
     else:
-        print("Face not Found")
-        pass
+        put_text = "Face not Found"
 
-    if cv.waitKey(1)==13 or count==100:
+    cv.putText(area,put_text,(50,50),cv.FONT_HERSHEY_COMPLEX,1,(0,255,0),2)
+    cv.imshow('Face Cropper',area)
+
+    if cv.waitKey(1)==ord('q') or count==1000:     # Try adjust count 50, 100, 200
         break
 
 cap.release()

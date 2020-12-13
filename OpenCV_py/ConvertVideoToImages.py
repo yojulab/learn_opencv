@@ -1,12 +1,12 @@
 from cv2 import cv2 as cv
 import os
 
-directoryname = os.getcwd() + '/datas/images/imageframes'
+directory_name = os.getcwd() + '/datas/images/imageframes'
 def hasdir():
     hasdir = False
-    if not os.path.exists(directoryname):
-        os.mkdir(directoryname)
-    hasdir = os.path.exists(directoryname)
+    if not os.path.exists(directory_name):
+        os.mkdir(directory_name)
+    hasdir = os.path.exists(directory_name)
     return hasdir
 
 def writeFrame(videocapture, second, cnt):
@@ -14,7 +14,7 @@ def writeFrame(videocapture, second, cnt):
     hasFrames, image = videocapture.read()
     if hasFrames:
         # save frame as PNG file
-        cv.imwrite(directoryname+"/image_"+str(cnt)+".png", image)
+        cv.imwrite(directory_name+"/image_"+str(cnt)+".png", image)
     return hasFrames
 
 filename = 'datas/videos/Armbot.mp4'
