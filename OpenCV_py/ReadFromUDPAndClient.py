@@ -1,5 +1,4 @@
 from cv2 import cv2 as cv
-
 # Test Previous
 # Server (ip : 192.168.0.12)
 # ~$ ffmpeg -f v4l2 -i /dev/video0 -preset ultrafast -vcodec libx264 -vsync 2 -tune zerolatency -b 900k -f h264 udp://0.0.0.:5000
@@ -14,6 +13,10 @@ if not cap.isOpened():
     print('VideoCapture not opened')
     exit(-1)
 
+import socket
+serverAddressPort = ("192.168.0.12", 20001)
+UDPClientSocket = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
+keys = [ord('x'),ord('y'),ord('z')]
 while True:
     ret, frame = cap.read()
 
@@ -23,8 +26,13 @@ while True:
 
     cv.imshow('image', frame)
 
-    if cv.waitKey(1) & 0XFF == ord('q'):
-        break
+    pressKey = cv.waitKey(1)
+    if pressKey > 0:
+        if pressKey in keys:
+            bytesToSend = str.encode(str(pressKey))
+            UDPClientSocket.sendto(bytesToSend, serverAddressPort)
+        if pressKey == ord('q'):
+            break
 
 cap.release()
 cv.destroyAllWindows()
