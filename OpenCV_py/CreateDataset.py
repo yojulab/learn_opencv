@@ -23,7 +23,7 @@ def create_dataset(img_folder):
     return (img_data_array, class_name)
 
 # extract the image array and class name
-img_data, class_name = create_dataset('to/root/path/')
+img_data, class_name = create_dataset('datas/images/dataset')
 
 print(class_name)
 
