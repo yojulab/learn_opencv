@@ -27,7 +27,9 @@ labels_to_names = {0:'person',1:'bicycle',2:'car',3:'motorcycle',4:'airplane',5:
 tensorflowNet = cv.dnn.readNetFromTensorflow(pb_file, cfg_file)
  
 # Input image
-draw_img = cv.imread('datas/images/beach.png')
+image_path = 'datas/images/beach.png'
+image_path = 'datas/images/raccoon-1.jpg'
+draw_img = cv.imread(image_path)
 rows, cols, channels = draw_img.shape
  
 import time
