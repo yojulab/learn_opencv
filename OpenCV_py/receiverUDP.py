@@ -4,7 +4,7 @@ import numpy
 from cv2 import cv2 as cv
 
 UDP_IP = "127.0.0.1"        # receiver ip
-UDP_PORT = 9505
+UDP_PORT = 1234
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 sock.bind((UDP_IP, UDP_PORT))
@@ -30,5 +30,5 @@ while True:
         out.write(frame)
 
         if cv.waitKey(1) & 0xFF == ord('q'):
-            cv.destroyAllWindows()
             break
+cv.destroyAllWindows()
