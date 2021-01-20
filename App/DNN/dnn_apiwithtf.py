@@ -28,7 +28,7 @@ tensorflowNet = cv.dnn.readNetFromTensorflow(pb_file, cfg_file)
  
 # Input image
 image_path = 'datas/images/beach.png'
-image_path = 'datas/images/raccoon-1.jpg'
+# image_path = 'datas/images/raccoon-1.jpg'
 draw_img = cv.imread(image_path)
 rows, cols, channels = draw_img.shape
  

@@ -1,7 +1,8 @@
 
 # UDP Message too long
 # https://stackoverflow.com/questions/22819214/udp-message-too-long
-# sudo sysctl -w net.inet.udp.maxdgram=65535
+# sudo sysctl -w net.inet.udp.maxdgram=65535    for mac
+# sudo sysctl -w net.core.rmem_max=65535    for linux
 import socket
 from cv2 import cv2 as cv
 

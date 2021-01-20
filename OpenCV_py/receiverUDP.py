@@ -1,9 +1,12 @@
 
+# sudo sysctl -w net.inet.udp.maxdgram=65535    for mac
+# sudo sysctl -w net.core.rmem_max=65535    for linux
+
 import socket
 import numpy
 from cv2 import cv2 as cv
 
-UDP_IP = "127.0.0.1"        # receiver ip
+UDP_IP = "192.168.0.151"        # receiver ip
 UDP_PORT = 1234
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
