@@ -26,6 +26,9 @@ labels_to_names = {0:'person',1:'bicycle',2:'car',3:'motorcycle',4:'airplane',5:
 
 tensorflowNet = cv.dnn.readNetFromTensorflow(pb_file, cfg_file)
  
+for t in tensorflowNet.getLayerTypes():
+    print('\t%d layers of type %s' % (tensorflowNet.getLayersCount(t), t))
+
 # Input image
 image_path = 'datas/images/beach.png'
 # image_path = 'datas/images/raccoon-1.jpg'
