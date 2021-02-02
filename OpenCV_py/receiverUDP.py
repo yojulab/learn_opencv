@@ -6,29 +6,37 @@ import socket
 import numpy
 from cv2 import cv2 as cv
 
-UDP_IP = "192.168.0.151"        # receiver ip
+UDP_IP = '127.0.0.1'        # receiver ip
+# UDP_IP = '192.168.0.151'        # receiver ip
 UDP_PORT = 1234
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 sock.bind((UDP_IP, UDP_PORT))
 
-s = [b'\xff' * 46080 for x in range(20)]
+width, height = 128, 96
+deeps = 3
+total_length = width * height * deeps
+divide = 10
+perlength = int(total_length / divide)
+reallength = perlength + 1
+
+s = [b'\xff' * perlength for x in range(divide)]
 
 fourcc = cv.VideoWriter_fourcc(*'DIVX')
-out = cv.VideoWriter('datas/videos/receiver_out.avi', fourcc, 25.0, (640, 480))
+out = cv.VideoWriter('datas/videos/receiver_out.avi', fourcc, 25.0, (width, height))
 
 while True:
     picture = b''
 
-    data, addr = sock.recvfrom(46081)
-    s[data[0]] = data[1:46081]
+    data, addr = sock.recvfrom(reallength)
+    s[data[0]] = data[1:reallength]
 
-    if data[0] == 19:
-        for i in range(20):
+    if data[0] == (divide-1):
+        for i in range(divide):
             picture += s[i]
 
         frame = numpy.fromstring(picture, dtype=numpy.uint8)
-        frame = frame.reshape(480, 640, 3)
+        frame = frame.reshape(width, height, deeps)
         cv.imshow("frame", frame)
         out.write(frame)
 
