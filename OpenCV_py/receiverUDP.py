@@ -13,17 +13,19 @@ UDP_PORT = 1234
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 sock.bind((UDP_IP, UDP_PORT))
 
+width, height = 640, 480
 width, height = 128, 96
 deeps = 3
 total_length = width * height * deeps
-divide = 10
+divide = 20
+divide = 4      
 perlength = int(total_length / divide)
 reallength = perlength + 1
 
 s = [b'\xff' * perlength for x in range(divide)]
 
 fourcc = cv.VideoWriter_fourcc(*'DIVX')
-out = cv.VideoWriter('datas/videos/receiver_out.avi', fourcc, 25.0, (width, height))
+# out = cv.VideoWriter('datas/videos/receiver_out.avi', fourcc, 25.0, (width, height))
 
 while True:
     picture = b''
@@ -36,9 +38,9 @@ while True:
             picture += s[i]
 
         frame = numpy.fromstring(picture, dtype=numpy.uint8)
-        frame = frame.reshape(width, height, deeps)
+        frame = frame.reshape(height, width, deeps)
         cv.imshow("frame", frame)
-        out.write(frame)
+        # out.write(frame)
 
         if cv.waitKey(1) & 0xFF == ord('q'):
             break

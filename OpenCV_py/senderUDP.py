@@ -26,8 +26,10 @@ print('Start....')
 width, height = 128, 96
 deeps = 3
 total_length = width * height * deeps
-divide = 10
+# divide = 20
+divide = 4      
 perlength = int(total_length / divide)
+reallength = perlength + 1
 
 try : 
     while cap.isOpened():
