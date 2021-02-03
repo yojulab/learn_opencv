@@ -12,6 +12,18 @@ UDP_PORT = 1234
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
+width, height = 640, 480
+width, height = 160, 120
+# width, height = 128, 96
+deeps = 3
+total_length = width * height * deeps
+# divide = 20
+divide = 3
+# divide = 4      
+perlength = int(total_length / divide)
+reallength = perlength + 1
+
+
 cap = cv.VideoCapture(0)
 # CSI Camera ~$ ls /dev/video*
 # cam_id = 0
@@ -21,15 +33,6 @@ cap = cv.VideoCapture(0)
 
 print('Start....')
 # net.inet.udp.maxdgram=65535
-
-# width, height = 640, 480
-width, height = 128, 96
-deeps = 3
-total_length = width * height * deeps
-# divide = 20
-divide = 4      
-perlength = int(total_length / divide)
-reallength = perlength + 1
 
 try : 
     while cap.isOpened():

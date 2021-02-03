@@ -14,11 +14,13 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 sock.bind((UDP_IP, UDP_PORT))
 
 width, height = 640, 480
-width, height = 128, 96
+width, height = 160, 120
+# width, height = 128, 96
 deeps = 3
 total_length = width * height * deeps
 divide = 20
-divide = 4      
+divide = 3      
+# divide = 4      
 perlength = int(total_length / divide)
 reallength = perlength + 1
 
