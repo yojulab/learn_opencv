@@ -1,7 +1,7 @@
 from cv2 import cv2 as cv
 import os
 
-directory_name = os.getcwd() + '/datas/images/imageframes'
+directory_name = os.getcwd() + '/temps'
 def hasdir():
     hasdir = False
     if not os.path.exists(directory_name):

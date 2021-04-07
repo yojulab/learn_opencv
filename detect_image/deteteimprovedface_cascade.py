@@ -7,7 +7,7 @@ fourcc = cv.VideoWriter_fourcc(*'XVID')
 
 face_csc = cv.CascadeClassifier('improved_cascade.xml')
 
-out = cv.VideoWriter("output.avi", fourcc, 5.0, (1366, 768))
+out = cv.VideoWriter("temps/output.avi", fourcc, 5.0, (1366, 768))
 
 while True:
 
