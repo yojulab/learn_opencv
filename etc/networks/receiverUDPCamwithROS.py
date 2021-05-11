@@ -31,7 +31,7 @@ reallength = perlength + 1
 s = [b'\xff' * perlength for x in range(divide)]
 
 fourcc = cv.VideoWriter_fourcc(*'DIVX')
-# out = cv.VideoWriter('temps/receiver_out.avi', fourcc, 25.0, (width, height))
+# out = cv.VideoWriter('datas/videos/receiver_out.avi', fourcc, 25.0, (width, height))
 
 drawing = False
 ix, iy = -1, -1
