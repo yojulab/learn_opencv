@@ -42,7 +42,18 @@ def qr_code_outer_corners(image):
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     _, th = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
     
+    # cv2.imshow('image',image)
+    # cv2.imshow('gray',gray)
+    # cv2.imshow('th',th)
+
+    # 찾을 물체는 흰색이어야하고 배경은 검은색 
     contours, hierarchy = cv2.findContours(th, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+    ret = max(contours, key=len)
+    draw_contour = cv2.drawContours(gray, contours, -1, (0,255,0), 2)
+    # draw_contour = cv2.drawContours(gray, [ret], 0, (0,255,0),2)
+    cv2.imshow('draw_contour', draw_contour)
+    cv2.waitKey()
+    cv2.destroyAllWindows()
     
     cnts = []
     centers = []
@@ -106,9 +117,34 @@ def qr_code_outer_corners(image):
     
     return outer_corners_found, outer_corners
 
+# read image
+frame = cv2.imread('./datas/images/qr_01.png') # can detect marker
+# frame = cv2.imread('../data/qr_02.png') # can't detect marker
+if frame is not None:
+    result, corners = qr_code_outer_corners(frame)
+
+    qr_code_size = 300
+
+    if result:
+        if all((0, 0) < tuple(c) < (frame.shape[1], frame.shape[0]) for c in corners):
+            rectified = rectify(frame, corners, (qr_code_size, qr_code_size))
+            
+            cv2.circle(frame, tuple(corners[0]), 15, (0, 255, 0), 2)
+            cv2.circle(frame, tuple(corners[1]), 15, (0, 0, 255), 2)
+            cv2.circle(frame, tuple(corners[2]), 15, (255, 0, 0), 2)
+            cv2.circle(frame, tuple(corners[3]), 15, (255, 255, 0), 2)
+            
+            frame[0:qr_code_size, 0:qr_code_size] = rectified
+
+    window_name = "QR code detection"
+    cv2.namedWindow(window_name, 0)
+    cv2.resizeWindow(window_name, int(frame.shape[1]/3),int(frame.shape[0]/3))
+    cv2.imshow(window_name, frame)
+
+    cv2.waitKey()
 
 # read video
-# cap = cv2.VideoCapture('../data/qr.mp4')
+# cap = cv2.VideoCapture('../datas/videos/qr.mp4')
 
 # while cap.grab():
 #     ret, frame = cap.read()
@@ -138,34 +174,9 @@ def qr_code_outer_corners(image):
 #         break
 
 # cap.release()
-# cv2.destroyAllWindows()
-
-
-# read image
-frame = cv2.imread('../data/qr_01.png') # can detect marker
-# frame = cv2.imread('../data/qr_02.png') # can't detect marker
-result, corners = qr_code_outer_corners(frame)
-
-qr_code_size = 300
-
-if result:
-    if all((0, 0) < tuple(c) < (frame.shape[1], frame.shape[0]) for c in corners):
-        rectified = rectify(frame, corners, (qr_code_size, qr_code_size))
-        
-        cv2.circle(frame, tuple(corners[0]), 15, (0, 255, 0), 2)
-        cv2.circle(frame, tuple(corners[1]), 15, (0, 0, 255), 2)
-        cv2.circle(frame, tuple(corners[2]), 15, (255, 0, 0), 2)
-        cv2.circle(frame, tuple(corners[3]), 15, (255, 255, 0), 2)
-        
-        frame[0:qr_code_size, 0:qr_code_size] = rectified
-
-window_name = "QR code detection"
-cv2.namedWindow(window_name, 0)
-cv2.resizeWindow(window_name, int(frame.shape[1]/3),int(frame.shape[0]/3))
-cv2.imshow(window_name, frame)
-
-k = cv2.waitKey()
 cv2.destroyAllWindows()
+
+
 
 
 
