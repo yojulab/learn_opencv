@@ -28,5 +28,14 @@ img_flip_along_x = cv2.flip(img, 0)
 img_flip_along_x_along_y = cv2.flip(img_flip_along_x, 1)
 img_flipped_xy = cv2.flip(img, -1)
 
+window_name =  'resized and flip'
+cv2.namedWindow(window_name, 0)
+cv2.imshow(window_name, img)
+cv2.waitKey()
+cv2.imshow(window_name, img_flip_along_x)
+cv2.waitKey()
+cv2.imshow(window_name, img_flip_along_x_along_y)
+cv2.waitKey()
+cv2.destroyAllWindows()
 # check that sequential flips around x and y equal to simultaneous x-y flip
-assert img_flipped_xy.all() == img_flip_along_x_along_y.all()
+# assert img_flipped_xy.all() == img_flip_along_x_along_y.all()
