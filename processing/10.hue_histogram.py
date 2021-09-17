@@ -29,11 +29,17 @@ def draw_histo_hue(hist, shape=(200, 256,3)):
 image = cv2.imread("datas/images/book.jpg", cv2.IMREAD_COLOR)  # 영상 읽기
 if image is None: raise Exception("영상 파일 읽기 오류")
 
-hsv_img = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)   # BGR 컬러 -> HSV 컬러     
+hsv_img = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)   # BGR 컬러 -> HSV 컬러    
 hue_hist = cv2.calcHist( [hsv_img], [0], None, [18], [0,180])       # Hue 채널 히스토그램 계산
+hue_saturation_hist = cv2.calcHist( [hsv_img], [0,1], None, [90, 128], [0,180, 0,256])       # Hue 채널 히스토그램 계산
 hue_hist_img = draw_histo_hue(hue_hist, (200, 360, 3)) # 히스토그램 그래프
 
 cv2.imshow("image", image)
+cv2.imshow("hue_saturation_hist", hue_saturation_hist)
 cv2.imshow("hsv_img", hsv_img)
 cv2.imshow("hue_hist_img", hue_hist_img)
 cv2.waitKey(0)
+
+import matplotlib.pyplot as plt
+plt.imshow(hue_saturation_hist, interpolation='nearest')
+plt.show()
