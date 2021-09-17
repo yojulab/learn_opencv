@@ -99,7 +99,9 @@ def make_points(image, average):
 # from google.colab.patches import cv2_imshow
 
 '''##### DETECTING lane lines in image ######'''
-cap = cv2.VideoCapture('datas/videos/roadway_01.mp4')
+path = 'datas/videos/roadway_01.mp4'
+path = 'datas/videos/solidWhiteRight.mp4'
+cap = cv2.VideoCapture(path)
 
 while True:
     ret, image1 = cap.read()
