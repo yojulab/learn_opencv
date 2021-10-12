@@ -1,5 +1,5 @@
 ######################## READ IMAGE ############################
-from cv2 import cv2 as cv
+import cv2 as cv
 # LOAD AN IMAGE USING 'IMREAD'
 img = cv.imread("datas/images/lena.png")
 # DISPLAY
@@ -7,7 +7,7 @@ cv.imshow("Lena Soderberg",img)
 cv.waitKey(0)
 
 ######################### READ VIDEO #############################
-from cv2 import cv2 as cv
+import cv2 as cv
 frameWidth = 640
 frameHeight = 480
 cap = cv.VideoCapture("datas/videos/Armbot.mp4")
@@ -22,7 +22,7 @@ while True:
 cap.release()
 
 ######################### READ WEBCAM  ############################
-from cv2 import cv2 as cv
+import cv2 as cv
 frameWidth = 640
 frameHeight = 480
 cap = cv.VideoCapture(1)

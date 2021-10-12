@@ -1,4 +1,4 @@
-from cv2 import cv2 as cv
+import cv2 as cv
 import numpy as np
 
 img = cv.imread("datas/images/cards.jpg")

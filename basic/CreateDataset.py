@@ -1,5 +1,5 @@
 import os
-from cv2 import cv2 as cv
+import cv2 as cv
 import numpy as np
 
 def create_dataset(img_folder):

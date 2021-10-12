@@ -2,7 +2,7 @@ import string, cgi, time
 from os import curdir, sep
 from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
 from SocketServer import ThreadingMixIn
-from cv2 import cv2 as cv, cv
+import cv2 as cv, cv
 import numpy
 import re
 

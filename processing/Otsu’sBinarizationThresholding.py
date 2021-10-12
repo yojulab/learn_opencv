@@ -1,4 +1,4 @@
-from cv2 import cv2 as cv
+import cv2 as cv
 from matplotlib import pyplot as plt
 
 img = cv.imread('datas/images/noisy.jpg', cv.IMREAD_GRAYSCALE)

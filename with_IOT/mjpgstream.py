@@ -1,4 +1,4 @@
-from cv2 import cv2 as cv
+import cv2 as cv
 from flask import Flask, Response, url_for
 
 getCam = False

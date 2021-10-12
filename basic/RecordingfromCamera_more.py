@@ -1,5 +1,5 @@
 import numpy as np
-from cv2 import cv2 as cv
+import cv2 as cv
 
 cap = cv.VideoCapture(0)
 fourcc = cv.VideoWriter_fourcc(*'XVID')

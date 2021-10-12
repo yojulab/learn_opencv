@@ -1,6 +1,6 @@
 # https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/auto_examples/plot_object_detection_saved_model.html
 
-from cv2 import cv2 as cv 
+import cv2 as cv 
 import tensorflow as tf
 
 PATH_TO_SAVED_MODEL = 'App/DNN/saved_model' 

@@ -1,4 +1,4 @@
-from cv2 import cv2 as cv
+import cv2 as cv
 
 cascadefile = "datas/haar_cascade_files/haarcascade_frontalface_default.xml"
 # cascadefile = "datas/haar_cascade_files/haarcascade_eye.xml"

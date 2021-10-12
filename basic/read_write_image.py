@@ -1,4 +1,4 @@
-from cv2 import cv2 as cv
+import cv2 as cv
 
 # read from images
 img = cv.imread('datas/images/load_image.jpg')

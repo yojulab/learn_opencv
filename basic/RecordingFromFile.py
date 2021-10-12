@@ -1,4 +1,4 @@
-from cv2 import cv2 as cv
+import cv2 as cv
 
 videoFile = 'datas/videos/Armbot.mp4'
 cap = cv.VideoCapture(videoFile)

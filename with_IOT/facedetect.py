@@ -1,8 +1,8 @@
 #/usr/bin/env python
 
 import numpy as np
-from cv2 import cv2 as cv
-from cv2 import cv2 as cv.cv as cv
+import cv2 as cv
+import cv2 as cv.cv as cv
 
 def clock():
     return cv.getTickCount() / cv.getTickFrequency()

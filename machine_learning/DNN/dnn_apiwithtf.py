@@ -1,4 +1,4 @@
-from cv2 import cv2 as cv
+import cv2 as cv
  
 # Load a model imported from Tensorflow
 # more refer : https://junha1125.github.io/artificial-intelligence/2020-08-15-2OpenCVcode/

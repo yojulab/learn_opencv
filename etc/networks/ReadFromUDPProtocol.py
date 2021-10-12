@@ -1,4 +1,4 @@
-from cv2 import cv2 as cv
+import cv2 as cv
 
 # Test Previous(Singlecast, Not Multicast)
 # Server (ip : 192.168.0.12), Client (ip : 192.168.0.6)

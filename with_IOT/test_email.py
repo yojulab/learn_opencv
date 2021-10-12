@@ -1,4 +1,4 @@
-from cv2 import cv2 as cv
+import cv2 as cv
 import smtplib
 from email.mime.image import MIMEImage
 from email.mime.multipart import MIMEMultipart

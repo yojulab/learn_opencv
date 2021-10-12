@@ -4,7 +4,7 @@
 # sudo sysctl -w net.inet.udp.maxdgram=65535    for mac
 # sudo sysctl -w net.core.rmem_max=65535    for linux
 import socket
-from cv2 import cv2 as cv
+import cv2 as cv
 
 UDP_SERVER_IP = '127.0.0.1'        # sender ip
 UDP_SERVER_IP = '192.168.0.173'

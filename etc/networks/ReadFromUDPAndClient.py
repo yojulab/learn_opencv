@@ -1,4 +1,4 @@
-from cv2 import cv2 as cv
+import cv2 as cv
 # Test Previous(Singlecast, Not Multicast)
 # Server (ip : 192.168.0.12), Client (ip : 192.168.0.6)
 # ~$ ffmpeg -v verbose -f v4l2 -i /dev/video0 -s 100x70 -f mpegts udp://192.168.0.6:1234		# Server to Client

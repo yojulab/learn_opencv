@@ -1,6 +1,6 @@
 import numpy as np
 import pyautogui
-from cv2 import cv2 as cv
+import cv2 as cv
 from PIL import ImageGrab
 
 fourcc = cv.VideoWriter_fourcc(*'XVID')

@@ -1,4 +1,4 @@
-from cv2 import cv2 as cv
+import cv2 as cv
 
 # path = 'datas/images/shapes_canny.png'
 # imgCanny = cv.imread(path, cv.IMREAD_GRAYSCALE)

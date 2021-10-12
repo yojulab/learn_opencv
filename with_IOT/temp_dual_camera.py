@@ -13,7 +13,7 @@
 # For better performance, the next step would be to experiment with having the window display
 # in a separate thread
 
-from cv2 import cv2 as cv
+import cv2 as cv
 import threading
 import numpy as np
 

@@ -2,7 +2,7 @@
 import numpy as np
 import pyautogui
 import imutils
-from cv2 import cv2 as cv
+import cv2 as cv
 
 image = pyautogui.screenshot()
 image = cv.cvtColor(np.array(image), cv.COLOR_RGB2BGR)

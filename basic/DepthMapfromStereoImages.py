@@ -1,5 +1,5 @@
 import numpy as np
-from cv2 import cv2 as cv
+import cv2 as cv
 from matplotlib import pyplot as plt
 
 imgL = cv.imread('datas/images/tsukuba_L.png',0)

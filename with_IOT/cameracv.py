@@ -1,5 +1,5 @@
 import picamera, time
-from cv2 import cv2 as cv
+import cv2 as cv
 import numpy as np
 import sys, io
 

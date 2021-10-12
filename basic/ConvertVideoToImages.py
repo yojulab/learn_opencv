@@ -1,4 +1,4 @@
-from cv2 import cv2 as cv
+import cv2 as cv
 import os
 
 directory_name = os.getcwd() + '/datas/images/imageframes'

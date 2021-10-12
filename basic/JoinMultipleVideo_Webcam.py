@@ -1,7 +1,7 @@
-from cv2 import cv2 as cv
+import cv2 as cv
 import numpy as np
 
-from cv2 import cv2 as cv
+import cv2 as cv
 frameWidth = 640
 frameHeight = 480
 # cap = cv.VideoCapture("datas/videos/Armbot.mp4")

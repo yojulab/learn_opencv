@@ -4,7 +4,7 @@
 
 import socket
 import numpy
-from cv2 import cv2 as cv
+import cv2 as cv
 
 UDP_SERVER_IP = '127.0.0.1'        # sender ip
 UDP_SERVER_IP = '192.168.0.151'
